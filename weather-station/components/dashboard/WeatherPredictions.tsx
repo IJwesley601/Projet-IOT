@@ -49,7 +49,7 @@ export default function WeatherPredictions({
   ) => {
     // Vérifier si la pression est valide
     if (isNaN(pressure) || pressure === 0) {
-      console.error(
+      console.log(
         "Pression invalide pour le calcul de la vitesse du vent :",
         { temperature, humidity, pressure }
       );
@@ -332,6 +332,7 @@ export default function WeatherPredictions({
         });
       }
     }
+    console.log("Predicted Wind Speeds:", predictedData.map((d) => d.windSpeed));
     return predictedData;
   };
 
@@ -375,15 +376,15 @@ export default function WeatherPredictions({
           severity: "high",
         };
       }
-      if (entry.windSpeed > 30) {
-        threat = {
-          type: "storm",
-          message: `Alerte Tempête: Vent fort (${
-            entry.windSpeed
-          } km/h) prévu le ${new Date(entry.date).toLocaleDateString("fr-FR")}`,
-          severity: "high",
-        };
-      }
+      // if (entry.windSpeed > 30) {
+      //   threat = {
+      //     type: "storm",
+      //     message: `Alerte Tempête: Vent fort (${
+      //       entry.windSpeed
+      //     } km/h) prévu le ${new Date(entry.date).toLocaleDateString("fr-FR")}`,
+      //     severity: "high",
+      //   };
+      // }
     });
 
     return threat;
@@ -541,12 +542,12 @@ export default function WeatherPredictions({
                 stroke="#3b82f6"
                 name="Humidité (%)"
               />
-              <Line
+              {/* <Line
                 type="monotone"
                 dataKey="windSpeed"
                 stroke="#10b981"
                 name="Vitesse du vent (km/h)"
-              />
+              />*/}
               <Line
                 type="monotone"
                 dataKey="rainfall"

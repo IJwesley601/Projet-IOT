@@ -219,9 +219,9 @@ export default function AlertSettings({ userId }: AlertSettingsProps) {
           <TabsTrigger value="temperature">Température</TabsTrigger>
           <TabsTrigger value="humidity">Humidité</TabsTrigger>
           <TabsTrigger value="pressure">Pression</TabsTrigger>
-          <TabsTrigger value="windSpeed">Vent</TabsTrigger>
+          {/* <TabsTrigger value="windSpeed">Vent</TabsTrigger>
           <TabsTrigger value="rainfall">Pluie</TabsTrigger>
-          <TabsTrigger value="light">Luminosité</TabsTrigger>
+          <TabsTrigger value="light">Luminosité</TabsTrigger> */}
         </TabsList>
 
         <TabsContent value="temperature">
